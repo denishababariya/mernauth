@@ -44,10 +44,18 @@ frontend/
    ```sh
    cd backend
    ```
-2. Install dependencies:
+2. Initialize Node.js project and install dependencies:
    ```sh
-   npm install
+   npm init -y
+   npm install express mongoose bcryptjs jsonwebtoken cors dotenv
    ```
+   - **Total dependencies installed:** 6
+     - express
+     - mongoose
+     - bcryptjs
+     - jsonwebtoken
+     - cors
+     - dotenv
 3. Create `.env` file:
    ```env
    MONGO_URI=mongodb://127.0.0.1:27017/mern_auth
@@ -66,10 +74,17 @@ frontend/
    ```sh
    cd frontend
    ```
-2. Install dependencies:
+2. Create React app and install dependencies:
    ```sh
-   npm install
+   npx create-react-app .
+   npm install react-redux @reduxjs/toolkit axios react-router-dom bootstrap
    ```
+   - **Total dependencies installed:** 5 (after create-react-app)
+     - react-redux
+     - @reduxjs/toolkit
+     - axios
+     - react-router-dom
+     - bootstrap
 3. Start React app:
    ```sh
    npm start
