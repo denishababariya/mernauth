@@ -1,9 +1,11 @@
-MERN Authentication Project
+# MERN Authentication Project
 
-A simple MERN stack project with user registration, login, logout using MongoDB, Express, React, Node.js, and Redux Toolkit.
+A simple MERN stack project with user registration, login, logout using MongoDB, Express, React, Node.js, and Redux Toolkit.  
 Uses Bootstrap for simple responsive design.
 
-Folder Structure
+## Folder Structure
+
+```plaintext
 backend/
 ├── controllers/
 │   ├── authController.js
@@ -32,86 +34,77 @@ frontend/
 │   └── index.js
 ├── package.json
 └── public/index.html
+```
 
-Installation & Setup
-Backend
+## Installation & Setup
 
-Navigate to backend folder:
+### Backend
 
-cd backend
+1. Navigate to backend folder:
+   ```sh
+   cd backend
+   ```
+2. Install dependencies:
+   ```sh
+   npm install
+   ```
+3. Create `.env` file:
+   ```env
+   MONGO_URI=mongodb://127.0.0.1:27017/mern_auth
+   JWT_SECRET=your_jwt_secret
+   PORT=5000
+   ```
+4. Run server (development with nodemon):
+   ```sh
+   npm run dev
+   ```
+- Server will run on: [http://localhost:5000](http://localhost:5000)
 
+### Frontend
 
-Install dependencies:
+1. Navigate to frontend folder:
+   ```sh
+   cd frontend
+   ```
+2. Install dependencies:
+   ```sh
+   npm install
+   ```
+3. Start React app:
+   ```sh
+   npm start
+   ```
+- Frontend will run on: [http://localhost:3000](http://localhost:3000)
 
-npm install
+## Main Functionality
 
+- Register a new user with name, email, and password
+- Login with registered email and password
+- Logout to clear session/token
+- Dashboard page shows logged-in user info
+- Uses JWT authentication for secure API access
 
-Create .env file:
+## API URLs
 
-MONGO_URI=mongodb://127.0.0.1:27017/mern_auth
-JWT_SECRET=your_jwt_secret
-PORT=5000
+| Method | Endpoint              | Description            |
+|--------|-----------------------|------------------------|
+| POST   | `/api/auth/register`  | Register a new user    |
+| POST   | `/api/auth/login`     | Login user and get token |
+| POST   | `/api/auth/logout`    | Logout user            |
 
+### Example Request (Register/Login)
 
-Run server (development with nodemon):
-
-npm run dev
-
-
-Server will run on:
-
-http://localhost:5000
-
-Frontend
-
-Navigate to frontend folder:
-
-cd frontend
-
-
-Install dependencies:
-
-npm install
-
-
-Start React app:
-
-npm start
-
-
-Frontend will run on:
-
-http://localhost:3000
-
-Main Functionality
-
-Register a new user with name, email, and password.
-
-Login with registered email and password.
-
-Logout to clear session/token.
-
-Dashboard page shows logged-in user info.
-
-Uses JWT authentication for secure API access.
-
-API URLs
-Method	Endpoint	Description
-POST	/api/auth/register	Register a new user
-POST	/api/auth/login	Login user and get token
-POST	/api/auth/logout	Logout user
-
-Example Request (Register/Login):
-
+```json
 {
   "name": "John Doe",       // only for register
   "email": "john@example.com",
   "password": "123456"
 }
+```
 
+### Example Response
 
-Example Response:
-
+```json
 {
   "user": {
     "_id": "12345",
@@ -120,13 +113,11 @@ Example Response:
   },
   "token": "jwt_token_here"
 }
+```
 
-Tech Stack
+## Tech Stack
 
-Frontend: React.js, Redux Toolkit, Bootstrap
-
-Backend: Node.js, Express.js
-
-Database: MongoDB
-
-Authentication: JWT + bcrypt
+- **Frontend:** React.js, Redux Toolkit, Bootstrap
+- **Backend:** Node.js, Express.js
+- **Database:** MongoDB
+- **Authentication:** JWT + bcrypt
